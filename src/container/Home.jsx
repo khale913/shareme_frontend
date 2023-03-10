@@ -52,7 +52,7 @@ const Home = () => {
               referrerPolicy="no-referrer"
               src={user?.image}
               alt="logo"
-              className="w-28"
+              className="w-20"
             />
           </Link>
         </div>
