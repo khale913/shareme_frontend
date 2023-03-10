@@ -13,7 +13,6 @@ const breakpointObj = {
 };
 
 const MasonryLayout = ({ pins }) => {
-  console.log(pins);
   const renderedPins = pins?.map((pin) => {
     return <Pin key={pin._id} pin={pin} className="w-max" />;
   });
