@@ -21,9 +21,9 @@ const Home = () => {
 
   useEffect(() => {
     const query = userQuery(userInfo?.sub);
-    console.log("CLIENT/QUERY:", client, query);
+    // console.log("CLIENT/QUERY:", client, query);
     client.fetch(query).then((data) => {
-      console.log("DATA:", data);
+      // console.log("DATA:", data);
       setUser(data[0]);
     });
   }, []);
