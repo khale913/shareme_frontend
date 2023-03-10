@@ -7,6 +7,8 @@ export const createOrGetUser = async (response, addUser) => {
 
   const { name, picture, sub } = decoded;
 
+  localStorage.setItem("user", JSON.stringify(decoded));
+
   const doc = {
     _id: sub,
     _type: "user",

@@ -6,10 +6,19 @@ import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
 import { createOrGetUser } from "../googleAuth";
 
+import { client } from "../client";
+
 const Login = () => {
-  const responseGoogle = (response) => {
-    console.log(response);
-    const res = createOrGetUser(response);
+  const navigate = useNavigate();
+
+  const responseGoogle = async (response) => {
+    // console.log(response);
+    await createOrGetUser(response).then((res) => {
+      const doc = res;
+      client.createIfNotExists(doc).then(() => {
+        navigate("/", { replace: true });
+      });
+    });
   };
 
   const user = false;
